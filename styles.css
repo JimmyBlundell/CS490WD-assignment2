@@ -1,67 +1,108 @@
-.example1 {
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-    white-space: nowrap; /* <--- FIX */
+.scroll-item {
+    text-decoration: none;
 }
 
-.example1 h3 {
-    position: absolute;
-    width: auto;
-    height: 100%;
+.scroll-item:hover {
+    color:blue;
+    text-decoration: underline;
+    cursor: grab;
+}
+
+.my-border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 3px;
+}
+
+.details {
+    background-color: lightgray;
+    width: 82%;
+    height: 200px;
+    padding: 10px;
+}
+
+.title {
+    width: fit-content;
+    padding-top: 5px;
     margin: 0;
-    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    float: top;
+}
+
+.date {
+    width: fit-content;
+    padding-top: 53px;
+    padding-bottom: 20px;
+    margin: 0;
+    color: gray;
+    font-size: 13px;
+}
+
+
+.marquee-item {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 20px;
+    width: 15px;
+}
+
+.img-nba {
+    height: 20px;
+    width: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.img-lebron {
+    height: 200px;
+    width: 200px;
+}
+
+.latest-block {
+    position: absolute;
+    padding: 4px;
+    background-color: darkblue;
+    color: white;
+    border: 2px;
+    z-index: 100;
+}
+
+div.photo {
+    position: relative;
+    padding: 0px;
+    float: right;
+    width: 200px;
+    height: 200px;
+}
+div.photo img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+div.description {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    height: 0px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
     text-align: center;
-    /* Starting position */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    /* Apply animation to this element */
-    -moz-animation: example1 15s linear infinite;
-    -webkit-animation: example1 15s linear infinite;
-    animation: example1 15s linear infinite;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    color: transparent;
 }
-
-
-/* Move it (define the animation) */
-
-@-moz-keyframes example1 {
-    0% {
-        -moz-transform: translateX(100%);
-    }
-    100% {
-        -moz-transform: translateX(-100%);
-    }
+div.photo:hover {
+    cursor: pointer;
 }
-
-@-webkit-keyframes example1 {
-    0% {
-        -webkit-transform: translateX(100%);
-    }
-    100% {
-        -webkit-transform: translateX(-100%);
-    }
-}
-
-@keyframes example1 {
-    0% {
-        -moz-transform: translateX(100%);
-        /* Firefox bug fix */
-        -webkit-transform: translateX(100%);
-        /* Firefox bug fix */
-        transform: translateX(100%);
-    }
-    100% {
-        -moz-transform: translateX(-100%);
-        /* Firefox bug fix */
-        -webkit-transform: translateX(-100%);
-        /* Firefox bug fix */
-        transform: translateX(-100%);
-    }
-}
-
-.example1 h3:hover {
-    -moz-animation-play-state: paused;
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
+div.photo:hover div.description {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: white;
+    font-weight: bold;
 }
